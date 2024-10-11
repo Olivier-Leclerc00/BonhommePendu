@@ -72,7 +72,7 @@ export class AppComponent {
   async applyEvent(event:any){
     if(this.gameData)
     {
-      switch(event.$type){
+      switch(event.eventType){
         case "WrongGuess": {
           this.gameData.nbWrongGuesses++;
           this.hangman.showMore();

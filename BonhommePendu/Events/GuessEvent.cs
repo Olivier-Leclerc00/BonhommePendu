@@ -4,6 +4,8 @@ namespace BonhommePendu.Events
 {
     public class GuessEvent : GameEvent
     {
+        public override string EventType { get { return "Guess"; } }
+
         public GuessEvent(GameData gameData, char letter) {
             Events = new List<GameEvent>();
 

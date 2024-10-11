@@ -4,6 +4,8 @@ namespace BonhommePendu.Events
 {
     public class RevealLetterEvent : GameEvent
     {
+        public override string EventType { get { return "RevealLetter"; } }
+
         public char Letter { get; set; }
         public int Index { get; set; }
 
