@@ -30,7 +30,7 @@ export class AppComponent {
 
   connectToHub() {
     this.hubConnection = new signalR.HubConnectionBuilder()
-                              .withUrl('https://localhost:7170/Pendu')
+                              .withUrl('http://localhost:5030/Pendu')
                               .build();
 
       this.hubConnection!.on('GameData', (data:GameData) => {
