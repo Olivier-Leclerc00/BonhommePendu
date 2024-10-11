@@ -74,16 +74,31 @@ export class AppComponent {
     {
       switch(event.eventType){
         case "WrongGuess": {
+          console.log(event.eventType);          
           this.gameData.nbWrongGuesses++;
           this.hangman.showMore();
           break;
         }
         case "RevealLetter": {
+          console.log(event.eventType); 
           this.gameData.revealedWord = this.setCharAt(this.gameData.revealedWord, event.index, event.letter);
           break;
         }
         case "GuessedLetter": {
+          console.log(event.eventType); 
           this.gameData.guessedLetters.push(event.letter);
+          break;
+        }
+        case "Lose": {
+          console.log(event.eventType); 
+          this.wronglyGuessedWord = event.word;
+          this.gameData.lost = true;
+          setTimeout(() => this.hangman.showMore(), 1000);
+          break;
+        }
+        case "Win": {
+          console.log(event.eventType); 
+          this.gameData.won = true;
           break;
         }
       }

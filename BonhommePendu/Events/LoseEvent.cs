@@ -8,7 +8,10 @@ namespace BonhommePendu.Events
         public override string EventType { get { return "Lose"; } }
 
         // TODO: Compléter
+        public string Word { get; set; }
         public LoseEvent(GameData gameData) {
+            gameData.Lost = true;
+            Word = gameData.Word;
         }
     }
 }
